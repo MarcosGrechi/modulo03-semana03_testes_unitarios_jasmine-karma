@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class CalculadoraService {
 
-  add(a: number, b: number): number {
+  somar(a: number, b: number): number {
     return a + b;
   }
   

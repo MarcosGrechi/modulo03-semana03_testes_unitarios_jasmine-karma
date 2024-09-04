@@ -20,4 +20,55 @@ describe('CalculadoraComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('deve validar se 2 valores são iguais', () => {
+      const valor1 = {value: true};
+      const valor2 = {value: true};
+
+      expect(valor1).toEqual(valor2);
+  });
+
+  it('deve validar se 2 valores são iguais e se os objetos comparados também são iguais', () => {
+    const valor1 = {value: true};
+    const valor2 = {value: true};
+
+    expect(valor1).toBe(valor1);
+  });
+
+  it('deve somar dois números corretamente', () => {
+    component.num1 = 2;
+    component.num2 = 4;
+    component.calculate();
+
+    expect(component.result).toBe(6);
+  });
+
+  it('deve validar a expressão regular de cep', () => {
+    const cep = "12345-567";
+
+    expect(cep).toMatch(/^\d{5}-\d{3}$/);
+  });
+
+  it('deve validar se valor foi definido', () => {
+    expect(component.num1).toBeDefined();
+  });
+
+  it('deve validar se valor não foi definido', () => {
+    let nota;
+    expect(nota).toBeUndefined();
+  });
+
+  it('deve validar se valor é nulo', () => {
+    let notas = null;
+    expect(notas).toBeNull();
+  });
+
+  it('deve validar se o valor do resultado não é nulo após somar os valores', () => {
+    component.num1 = 2;
+    component.num2 = 4;
+    component.calculate();
+
+    expect(component.result).not.toBeNull();
+  });
+
 });

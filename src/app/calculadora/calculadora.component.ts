@@ -17,6 +17,6 @@ export class CalculadoraComponent {
   constructor(private calculatorService: CalculadoraService) {}
 
   calculate() {
-    this.result = this.calculatorService.add(this.num1, this.num2);
+    this.result = this.calculatorService.somar(this.num1, this.num2);
   }
 }
