@@ -71,4 +71,26 @@ describe('CalculadoraComponent', () => {
     expect(component.result).not.toBeNull();
   });
 
+  it('deve validar se o valor está contido dentro do array', () => {
+    let frutas = ['laranja', 'maçã', 'pera'];
+
+    expect(frutas).toContain('laranja');
+  });
+
+  it('deve validar se o valor é menor que 10', () => {
+    component.num1 = 2;
+    component.num2 = 4;
+    component.calculate();
+
+    expect(component.result).toBeLessThan(10);
+  });
+
+  it('deve validar se o valor é maior que 10', () => {
+    component.num1 = 2;
+    component.num2 = 14;
+    component.calculate();
+
+    expect(component.result).toBeGreaterThan(10);
+  });
+
 });

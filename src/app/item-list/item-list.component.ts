@@ -1,0 +1,21 @@
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+@Component({
+  selector: 'app-item-list',
+  standalone: true,
+  imports: [FormsModule],
+  templateUrl: './item-list.component.html',
+  styleUrl: './item-list.component.css'
+})
+export class ItemListComponent {
+  items: string[] = [];
+  newItem: string = '';
+
+  addItem() {
+    if (this.newItem) {
+      this.items.push(this.newItem);
+      this.newItem = ''; // Limpa o campo de entrada
+    }
+  }
+}

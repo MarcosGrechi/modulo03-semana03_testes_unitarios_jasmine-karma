@@ -19,4 +19,8 @@ export class CalculadoraComponent {
   calculate() {
     this.result = this.calculatorService.somar(this.num1, this.num2);
   }
+
+  dividirValor(){
+    this.result = this.calculatorService.dividir(this.num1, this.num2);
+  }
 }
