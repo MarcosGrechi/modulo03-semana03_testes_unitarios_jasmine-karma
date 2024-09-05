@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CalculadoraService } from '../calculadora.service';
+import { CalculadoraService } from '../services/calculadora.service';
 import { FormsModule } from '@angular/forms';
 
 @Component({
