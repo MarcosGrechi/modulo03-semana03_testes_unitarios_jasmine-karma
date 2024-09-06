@@ -93,4 +93,14 @@ describe('CalculadoraComponent', () => {
     expect(component.result).toBeGreaterThan(10);
   });
 
+  it('deve executar pelo menos uma vez o evento de click da função somar ', () => {
+    const spy = spyOn(component, 'calculate').and.callThrough();
+
+    const button = fixture.nativeElement.querySelector('button');
+    button.click();
+
+    expect(spy).toHaveBeenCalled();
+  });
+
+
 });
