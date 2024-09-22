@@ -19,10 +19,6 @@ describe('CalculadoraService', () => {
   });
 
   it('deve lançar um erro ao tentar dividir por zero (usando o toThrowError)', () => {
-    expect(() => service.dividir(10,0)).toThrowError('Não é permitida a divisão por zero');
-  });
-
-  it('deve lançar um erro ao tentar dividir por zero (usando o toThrowError)', () => {
     expect(() => { throw new Error('Numero dividido por zero') }).toThrowError('Numero dividido por zero');
   });
 
@@ -75,7 +71,48 @@ describe('CalculadoraService', () => {
     expect(spy).toHaveBeenCalledWith(4,2);
   });
 
+  it('deve subtrair corretamente dois números', () => {
+    const num1 = 10;
+    const num2 = 4;
+    const resultadoEsperado = 6;
 
+    const resultado = service.subtrair(num1, num2);
 
-  
+    expect(resultado).toBe(resultadoEsperado);
+  });
+
+  it('deve multiplicar corretamente dois números', () => {
+    const num1 = 5;
+    const num2 = 3;
+    const resultadoEsperado = 15;
+
+    const resultado = service.multiplicar(num1, num2);
+
+    expect(resultado).toBe(resultadoEsperado);
+  });
+
+  it('deve dividir corretamente dois números', () => {
+    const num1 = 20;
+    const num2 = 4;
+    const resultadoEsperado = 5;
+
+    const resultado = service.dividir(num1, num2);
+
+    expect(resultado).toBe(resultadoEsperado);
+  });
+
+  it('deve retornar erro ao dividir por zero', () => {
+    const num1 = 10;
+    const num2 = 0;
+
+    expect(() => service.dividir(num1, num2)).toThrow(new Error('Divisão por zero'));
+  });
+
+  it('deve lançar um erro ao tentar dividir por zero', () => {
+    const num1 = 10;
+    const num2 = 0;
+
+    expect(() => service.dividir(num1, num2)).toThrow(new Error('Divisão por zero'));
+  });
+
 });

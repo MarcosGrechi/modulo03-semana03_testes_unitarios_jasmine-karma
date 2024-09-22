@@ -4,17 +4,25 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CalculadoraService {
+  static dividir: any;
 
   somar(a: number, b: number): number {
     return a + b;
   }
 
-  dividir(a: number, b: number): number {
-    if(b === 0){
-      throw new Error('Não é permitida a divisão por zero');
+  dividir(num1: number, num2: number): number {
+    if (num2 === 0) {
+      throw new Error('Divisão por zero');
     }
+    return num1 / num2;
+  }
 
-    return a /b;
+  subtrair(num1: number, num2: number): number {
+    return num1 - num2;
+  }
+
+  multiplicar(num1: number, num2: number): number {
+    return num1 * num2;
   }
   
 }
